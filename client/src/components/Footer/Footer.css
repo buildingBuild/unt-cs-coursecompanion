@@ -1,0 +1,17 @@
+.Footer-contain{
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    gap: 50px;
+   justify-content: space-evenly;
+       
+}
+
+.Footer-contain p{
+font-family: "Roboto", sans-serif;
+font-size: 12px;
+font-weight: 250;
+letter-spacing: 2px;
+color: white;
+}

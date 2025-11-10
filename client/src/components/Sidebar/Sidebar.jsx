@@ -1,6 +1,6 @@
 import './Sidebar.css'
 
-function Sidebar(){
+export function Sidebar(){
 
 
 

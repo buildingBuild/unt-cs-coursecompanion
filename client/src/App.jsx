@@ -1,18 +1,29 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { Sidebar } from './components/Sidebar/Sidebar'
+import { Chatbox } from './components/Chatbox/Chatbox'
+import { Header } from './components/Header/Header'
+import { Footer } from './components/Footer/Footer'
+
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     
     <div className='grid-container'>
-      <div className='header-nav'></div>
-      <div className='chatBox'></div>
-       <div className='sidebar'></div>
-       <div className='footlower'></div>
+      <div className='header-nav'>
+<Header></Header>
+      </div>
+      <div className='chatBox'>
+        <Chatbox></Chatbox>
+      </div>
+       <div className='sidebar'>
+        <Sidebar></Sidebar>
+       </div>
+       <div className='footlower'>
+        <Footer></Footer>
+       </div>
 
   </div>
     

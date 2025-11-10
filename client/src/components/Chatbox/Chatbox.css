@@ -1,0 +1,97 @@
+.Chatbox-container{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+
+}
+.Chatbox-container h1{
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 50px;
+    font-weight: 600;
+    letter-spacing: 5px;
+}
+
+.Chatbox-container h4 {
+        font-family: "Inter", sans-serif;
+        font-weight: 400;
+        font-style: italic;
+        letter-spacing: 3px;
+}
+.box-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: -10px;
+
+}
+
+
+
+
+.input-contents{
+    position: relative;
+}
+.input-contents textarea{
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    width: 650px;
+    height: 60px;
+    align-items: flex-start;
+    text-align: start;
+    border-radius: 5px;
+    padding: 8px;
+    font-size: 16px;
+    resize: none;
+}
+
+.input-icons{
+display: flex;
+gap: 5px;
+position: absolute;
+padding: 5px;
+bottom: 0;
+ right: 0;
+}
+
+.input-icons img{
+    height: 30px;
+}
+
+
+
+
+.box-hero h1{
+    margin-bottom: -10px;
+
+}
+
+.communityEntries{
+display: flex;
+flex-direction: column;
+gap: 10px;
+
+}
+
+.pLogo{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    margin-bottom: -45px;
+    font-size: 20px;
+}
+
+.entries{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.entries h5{
+    font-size: 16px;
+    font-family: "Inter", sans-serif;
+    font-weight: 450;
+    text-transform: capitalize;
+}
