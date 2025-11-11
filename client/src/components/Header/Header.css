@@ -4,6 +4,7 @@
     gap: 10px;
     margin-left: auto;
     
+    
 }
 
 .Header-contain h4{
@@ -11,4 +12,7 @@
     font-weight: 250;
     letter-spacing: 2px;
     color: white;
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
+    color: gray;
 }

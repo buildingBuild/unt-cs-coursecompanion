@@ -10,7 +10,7 @@ return(
 <div className='Chatbox-container'>
 <div className='box-hero'>
 <h1>Course Companion</h1>
-<h4>Discover UNT CS courses and professors through real student insights</h4>
+<h4>Discover UNT CS courses and professors powered by real student insights</h4>
 </div>
 <div className='input-contents'>
     <textarea placeholder='Ask about csce 2110 difficulty'>

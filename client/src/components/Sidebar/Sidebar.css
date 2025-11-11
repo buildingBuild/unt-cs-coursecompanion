@@ -1,0 +1,12 @@
+.sidebar-contain{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+}
+
+.logo-box{
+    display: flex;
+}

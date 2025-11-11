@@ -13,5 +13,18 @@ font-family: "Roboto", sans-serif;
 font-size: 12px;
 font-weight: 250;
 letter-spacing: 2px;
+color: grey;
+transition: color 0.3s ease;
+}
+
+.Footer-contain p:hover{
+
 color: white;
 }
+
+.Footer-contain a{
+    cursor: pointer;
+    color: inherit;
+    text-decoration: none;
+}
+
