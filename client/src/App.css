@@ -3,10 +3,13 @@
 display: grid;
 
 /*background-image: linear-gradient(to top, #c1dfc4 0%, #deecdd 100%); */
-background-image: linear-gradient(to top, #c1dfc4 0%, #deecdd 100%);
+/*background-image: linear-gradient(to top, #c1dfc4 0%, #deecdd 100%);  make green an option later*/ 
+
 min-height: 100vh;
 grid-template-columns: 80px 3fr;
 grid-template-rows:  minmax(10px,60px) 3fr minmax(10px, 30px);
+background-color: #F5F7F5;
+    background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
 
 }
 
@@ -16,6 +19,7 @@ flex-direction: row;
 grid-row: 1;
 grid-column: 2;
 }
+
 
 .chatBox{
     display: flex;
@@ -28,11 +32,13 @@ grid-column: 2;
 
 .sidebar{
 display: flex;
-background-color: #242424;
+background-color: #242424; /* possibly switch to this */
+background: linear-gradient(to bottom, #f5f7fa 0%, #e8ebef 100%);
+background: linear-gradient(to bottom, #f0f2f5 0%, #e4e7eb 100%);
+border-right: 1px solid #d1d5db;
 flex-direction: column;
 grid-column: 1;
 grid-row: 1/4;
-
 }
 
 .footlower{

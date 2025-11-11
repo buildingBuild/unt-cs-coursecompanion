@@ -18,6 +18,8 @@ return(
 <div className='input-icons'>
     <img src='/circle.svg'></img>
     <img src='/bubble.svg'></img>
+    
+
 </div>
     
 </div>
