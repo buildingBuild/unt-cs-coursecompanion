@@ -17,9 +17,6 @@ return(
     </textarea>
 <div className='input-icons'>
     <img src='/circle.svg'></img>
-    <img src='/bubble.svg'></img>
-    
-
 </div>
     
 </div>
@@ -30,7 +27,7 @@ return(
     <div className='entries' id='entries'>
     <h5>How hard is csce 3600?</h5>
     <h5>Should I take doran for csce 4010?</h5>
-    <h5>Should I take doran for csce 4010?</h5>
+    <h5>Best studying Plan for csce 2110</h5>
     </div>
 </div>
 </div>

@@ -50,15 +50,20 @@ align-items: center;
 
 .input-icons{
 display: flex;
-gap: 5px;
+gap: 10px;
 position: absolute;
-padding: 5px;
-bottom: 0;
- right: 0;
+padding: 0px;
+top: 0;
+  right: 0; 
 }
 
 .input-icons img{
-    height: 30px;
+    height: 77px;
+    fill: white;
+    border-radius: 5px;
+    background-image: linear-gradient(-225deg, #5D9FFF 0%, #B8DCFF 48%, #6BBBFF 100%);
+    cursor: pointer;
+    
 }
 
 
@@ -94,8 +99,18 @@ gap: 10px;
 }
 
 .entries h5{
+    cursor: pointer;
+    border: solid 1px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
     font-size: 16px;
     font-family: "Inter", sans-serif;
-    font-weight: 450;
+    font-weight: 300;
     text-transform: capitalize;
+    transition: font-size 0.3s ease-in-out;
+}
+
+.entries h5:hover{
+   font-size: 18px;
 }
