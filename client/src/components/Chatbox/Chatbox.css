@@ -3,9 +3,24 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-    color: #222
+color: #222;
+height: 100%;
 
 }
+
+
+.Chatting-container{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+height: 100%;
+
+}
+
+
+
+
 .Chatbox-container h1{
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
@@ -113,4 +128,46 @@ gap: 10px;
 
 .entries h5:hover{
    font-size: 18px;
+}
+
+.Chatting-container .communityEntries,.box-hero {
+    display: none;
+}
+
+.Chatbox-container{
+
+}
+
+.allChats{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-height: 600px;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+     scrollbar-width: none;
+    
+}
+
+.allChats::-webkit-scrollbar{
+    display: none;
+}
+
+.innerChats{
+    overflow-y: scroll;
+
+}
+
+.userText{
+margin-right: 0;
+
+}
+
+.aiResponse{
+margin-right: 0;
+}
+
+.Chatting-container .input-contents{
+margin-top: auto;
+margin-bottom: 40px;
 }

@@ -12,7 +12,7 @@ load_dotenv()
 chroma_key = os.getenv("CHROMA_API_KEY")
 tenant_key =os.getenv("TENANT_KEY")
 
-client = chromadb.CloudClient(
+client = chromadb.CloudClient( 
   api_key= f"{chroma_key}",
   tenant=f"{tenant_key}",
   database='CourseCompanion'
