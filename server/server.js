@@ -21,8 +21,14 @@ app.post('/api/chat', async (req, res) => {
     console.log("hi its me")
     try {
         const { userQuestion } = req.body
-        console.log(userQuestion)
-        res.status(200).json({ message: userQuestion })
+
+
+        const response = await ollama.chat({
+            model: 'Mistral',
+            messages: [{ role: 'user', content: 'Why is the sky blue?' }],
+        })
+
+        res.status(200).json({ message: response.message.content })
 
     }
     catch (err) {
