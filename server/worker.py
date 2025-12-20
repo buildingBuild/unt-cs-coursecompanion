@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 from typing import Union
 from fastapi import FastAPI
 import requests
+import numpy
 
 
 app = FastAPI()

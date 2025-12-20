@@ -18,16 +18,15 @@ app.use(cors())
 
 
 app.post('/api/chat', async (req, res) => {
-    console.log("hi its me")
+
     try {
+        console.log("awaiting a message.....")
         const { userQuestion } = req.body
-
-
         const response = await ollama.chat({
             model: 'Mistral',
-            messages: [{ role: 'user', content: 'Why is the sky blue?' }],
+            messages: [{ role: 'user', content: 'Reply with  sir' }],
         })
-
+        console.log(response.message.content)
         res.status(200).json({ message: response.message.content })
 
     }

@@ -1,26 +1,31 @@
 import { useState, useEffect } from "react";
+import { Chatting } from "./Chatting";
 import axios from "axios";
+//import { sendMesage } from "./sendMessage";
 axios.defaults.baseURL = "http://localhost:5000";
 import "./Chatbox.css";
 
 export function Chatbox() {
-    const [chatting, setChatting] = useState(true);
+    const [chatting, setChatting] = useState(false);
     const [userQuery, setUserQuery] = useState("");
-    const [loading, setLoading] = useState("")
+    const [message, setMessage] = useState("")
+    const [loading, setLoading] = useState(false)
     const [aiResponse, setAiResponse] = useState("");
-    const [latency, setLatency] = useState("");
-    const [chats, setChats] = useState({
-        userQuestion: "",
-        response: "",
-        latency: "",
-    });
-    const [history, setHistory] = useState({});
+    const [latency, setLatency] = useState(0);
+    const [chat, setChat] = useState({ userQuestion: "", response: "", latency: 0, });
+    const [convos, setConvos] = useState([]);
 
     async function sendMesage() {
+
         try {
+            if (loading)
+                return;
+
+            setLoading(true)
+            setChatting(true)
+            setUserQuery(message)
 
             const start = performance.now();
-
             const res = await axios.post("http://localhost:5000/api/chat", {
                 userQuestion: userQuery,
             });
@@ -33,27 +38,45 @@ export function Chatbox() {
                 let convertedDuration = (duration / 1000).toFixed(3)
 
 
-                console.log(`Took ${convertedDuration} seconds`);
+
+
 
                 setLatency(convertedDuration)
                 setAiResponse(res.data.message)
+                setLoading(false)
 
-                console.log(convertedDuration)
 
+                setChat({
+                    userQuestion: userQuery,
+                    response: aiResponse,
+                    latency: latency,
+                })
+
+                setConvos((prevConvo) => [...prevConvo, chat])
+                console.log(convos)
             }
             else {
                 throw new Error(`Server responded with ${res.status}`);
             }
         }
         catch (err) {
+
             console.log(err.message);
+            setAiResponse(err.message)
+            setLoading(false)
         }
     }
 
 
     const updateMessage = (e) => {
-        setUserQuery(e.target.value);
+        setMessage(e.target.value)
     };
+
+
+
+
+
+
 
     return (
         <>
@@ -65,65 +88,17 @@ export function Chatbox() {
                         insights
                     </h4>
                 </div>
-                <div className="allChats">
-                    <div className="userText">
-                        <p>User text User text User text User text <br /> ser text User tex User text User text User text User text<br></br> User text User text User text User text User text User text User text User text  text User tex User text User text User text User text<br></br> User</p>
-                    </div>
-                    <div className="aiResponse">
-                        <p> AI Response</p>
-                    </div>
-                    <div className="userText">
-                        <p>User question</p>
-                    </div>
-                    <div className="aiResponse">
-                        <p> AI Response</p>
-                    </div>
-                    <div className="userText">
-                        <p>User text User text User text User text <br /> ser text User tex User text User text User text User text<br></br> User text User text User text User text User text User text User text User text  text User tex User text User text User text User text<br></br> User</p>
-                    </div>
-                    <div className="aiResponse">
-                        <p> AI Response</p>
-                    </div>
-                    <div className="userText">
-                        <p>User question</p>
-                    </div>
-                    <div className="aiResponse">
-                        <p> AI Response</p>
-                    </div>
-                    <div className="userText">
-                        <p>User text User text User text User text <br /> ser text User tex User text User text User text User text<br></br> User text User text User text User text User text User text User text User text  text User tex User text User text User text User text<br></br> User</p>
-                    </div>
-                    <div className="aiResponse">
-                        <p> AI Response</p>
-                    </div>
-                    <div className="userText">
-                        <p>User question</p>
-                    </div>
-                    <div className="aiResponse">
-                        <p> AI Response</p>
-                    </div>
-                    <div className="userText">
-                        <p>User text User text User text User text <br /> ser text User tex User text User text User text User text<br></br> User text User text User text User text User text User text User text User text  text User tex User text User text User text User text<br></br> User</p>
-                    </div>
-                    <div className="aiResponse">
-                        <p> AI Response</p>
-                    </div>
-                    <div className="userText">
-                        <p>User question</p>
-                    </div>
-                    <div className="aiResponse">
-                        <p> AI Response</p>
-                    </div>
-                </div>
+                <Chatting userQuery={userQuery} setUserQuery={setUserQuery} loading={loading} setLoading={setLoading} aiResponse={aiResponse} setAiResponse={setAiResponse} setConvos={setConvos} convos={convos} />
                 <div className="input-contents">
                     <textarea
                         placeholder="Ask about csce 2110 difficulty"
                         onChange={updateMessage}
                     ></textarea>
                     <div className="input-icons">
-                        <img src="/circle.svg" onClick={sendMesage}></img>
+                        <img src="/circle.svg" onClick={sendMesage} disabled={loading}></img>
                     </div>
                 </div>
+
                 <div className="communityEntries">
                     <div className="pLogo">
                         <h4>Popular Questions</h4>
